@@ -295,51 +295,50 @@
                 </ul>
             </section>
 
-            <!-- System Architecture -->
-            <section>
-                <h2>🏗️ System Architecture</h2>
-            
-                <div class="mermaid">
-            graph TB
-            
-                subgraph "Presentation Layer"
-                    WebAPI["Web API\n.NET 8"]
-                    AdminAPI["Admin API\n.NET 8"]
-                end
-            
-                subgraph "Application Layer"
-                    MediatR["MediatR CQRS"]
-                    Commands["Command Handlers"]
-                    Queries["Query Handlers"]
-                end
-            
-                subgraph "Core Services"
-                    VO2Service["VO2max Calculator\nJack Daniels"]
-                    PlanGen["Plan Generator\nProgressive Algorithm"]
-                end
-            
-                subgraph "Data Layer"
-                    EFCore["EF Core 9.0"]
-                    DB["SQL Server 2022\n166+ Workouts"]
-                end
-            
-                WebAPI --> MediatR
-                AdminAPI --> MediatR
-                MediatR --> Commands
-                MediatR --> Queries
-                Commands --> VO2Service
-                Commands --> PlanGen
-                PlanGen --> EFCore
-                EFCore --> DB
-            
-                style WebAPI fill:#87CEEB
-                style AdminAPI fill:#87CEEB
-                style MediatR fill:#FFD700
-                style VO2Service fill:#90EE90
-                style PlanGen fill:#90EE90
-                style DB fill:#DDA0DD
-                </div>
-            </section>
+            <!-- System Architecture --><section>
+    <h2>🏗️ System Architecture</h2>
+
+    <div class="mermaid">
+graph TB
+
+    subgraph "Presentation Layer"
+        WebAPI["Web API\n.NET 8"]
+        AdminAPI["Admin API\n.NET 8"]
+    end
+
+    subgraph "Application Layer"
+        MediatR["MediatR CQRS"]
+        Commands["Command Handlers"]
+        Queries["Query Handlers"]
+    end
+
+    subgraph "Core Services"
+        VO2Service["VO2max Calculator\nJack Daniels"]
+        PlanGen["Plan Generator\nProgressive Algorithm"]
+    end
+
+    subgraph "Data Layer"
+        EFCore["EF Core 9.0"]
+        DB["SQL Server 2022\n166+ Workouts"]
+    end
+
+    WebAPI --> MediatR
+    AdminAPI --> MediatR
+    MediatR --> Commands
+    MediatR --> Queries
+    Commands --> VO2Service
+    Commands --> PlanGen
+    PlanGen --> EFCore
+    EFCore --> DB
+
+    style WebAPI fill:#87CEEB
+    style AdminAPI fill:#87CEEB
+    style MediatR fill:#FFD700
+    style VO2Service fill:#90EE90
+    style PlanGen fill:#90EE90
+    style DB fill:#DDA0DD
+    </div>
+</section>
 
             <!-- Core Features Overview -->
             <section>
@@ -568,37 +567,37 @@ VO2max = VO2 / %VO2max
             </section>
 
             <!-- Progressive Overload -->
-            <section>
-                <h2>Progressive Overload: 3:1 Cycle 🔄</h2>
-            
-                <div class="mermaid">
-            graph LR
-                A["Week 1\nBaseline\n100%"] --> B["Week 2\nBuild\n+10%"]
-                B --> C["Week 3\nPeak\n+20%"]
-                C --> D["Week 4\nRecovery\n-10%"]
-                D --> E["Next Cycle\nBase +15%"]
-            
-                style A fill:#90EE90
-                style B fill:#FFD700
-                style C fill:#FF6347
-                style D fill:#87CEEB
-                style E fill:#DDA0DD
-                </div>
-            
-                <div style="margin-top: 1.5em;">
-                    <h3>Weekly Volume Calculation</h3>
-                    <div class="code-block">
-            Cycle Base = Initial Base × 1.15^(cycle number)
-            Weekly Volume = Cycle Base × Week Modifier
-            
-            Week Modifiers:
-            - Week 1: 100% (Baseline)
-            - Week 2: 110% (+10%)
-            - Week 3: 120% (+20% - Peak week)
-            - Week 4: 90% (Recovery week)
-                    </div>
-                </div>
-            </section>
+<section>
+    <h2>Progressive Overload: 3:1 Cycle 🔄</h2>
+
+    <div class="mermaid">
+graph LR
+    A["Week 1\nBaseline\n100%"] --> B["Week 2\nBuild\n+10%"]
+    B --> C["Week 3\nPeak\n+20%"]
+    C --> D["Week 4\nRecovery\n-10%"]
+    D --> E["Next Cycle\nBase +15%"]
+
+    style A fill:#90EE90
+    style B fill:#FFD700
+    style C fill:#FF6347
+    style D fill:#87CEEB
+    style E fill:#DDA0DD
+    </div>
+
+    <div style="margin-top: 1.5em;">
+        <h3>Weekly Volume Calculation</h3>
+        <div class="code-block">
+Cycle Base = Initial Base × 1.15^(cycle number)
+Weekly Volume = Cycle Base × Week Modifier
+
+Week Modifiers:
+- Week 1: 100% (Baseline)
+- Week 2: 110% (+10%)
+- Week 3: 120% (+20% - Peak week)
+- Week 4: 90% (Recovery week)
+        </div>
+    </div>
+</section>
 
             <!-- Workout Catalogue -->
             <section>
